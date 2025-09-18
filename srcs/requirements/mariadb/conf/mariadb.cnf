@@ -1,0 +1,8 @@
+[mysqld]
+datadir=/var/lib/mysql
+socket=/run/mysqld/mysqld.sock
+bind-address=0.0.0.0
+# Reasonable defaults for tiny WP
+skip-log-bin
+character-set-server = utf8mb4
+collation-server = utf8mb4_unicode_ci
