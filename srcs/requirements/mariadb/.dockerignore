@@ -1,3 +1,4 @@
-.*
-conf/*
-tools/*
+# safe to ignore junk, but keep our build files
+.git
+**/.DS_Store
+**/Thumbs.db

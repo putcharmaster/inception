@@ -9,38 +9,38 @@ all: build up
 
 
 build:
-$(COMPOSE) build --no-cache
+	$(COMPOSE) build --no-cache
 
 
 up:
-$(COMPOSE) up -d
+	$(COMPOSE) up -d
 
 
 logs:
-$(COMPOSE) logs -f --tail=200
+	$(COMPOSE) logs -f --tail=200
 
 
 stop:
-$(COMPOSE) stop
+	$(COMPOSE) stop
 
 
 down:
-$(COMPOSE) down
+	$(COMPOSE) down
 
 
 clean: down
-# Remove only containers and dangling images
-docker image prune -f
+	# Remove only containers and dangling images
+	docker image prune -f
 
 
 fclean: down
-# Remove volumes + images for this project
-$(COMPOSE) down -v --rmi all --remove-orphans
-docker volume prune -f
+	# Remove volumes + images for this project
+	$(COMPOSE) down -v --rmi all --remove-orphans
+	docker volume prune -f
 
 
 re: fclean all
 
 
 prune:
-docker system prune -af --volumes
+	docker system prune -af --volumes
